@@ -1,0 +1,23 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// Theme skin
+@import "basically-basic/themes/{{ site.data.theme.skin | default: 'default' }}";
+
+@import "basically-basic";
+
+$accent-color: red;
+
+/*  ADD STYLES HERE */
+
+.inner {margin-left:auto;margin-right:auto}
+.intro-text, .section-title h2 {text-align: center;}
+h1, .title-area .site-title {font-family: 'Cinzel Decorative', cursive;}
+@media screen and (min-width: 1280px){
+.intro-title {
+    font-size: 70px;
+}}
+.layout--post .entry-content, .layout--page .entry-content {width:100%;}
