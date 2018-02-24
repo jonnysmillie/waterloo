@@ -18,15 +18,9 @@ layout: default
           {% endcomment %}
           {% include posts-paginated.html %}
         {% else %}
-          {% include posts-films.html %}
+          {% include posts-video.html %}
         {% endif %}
       </div>
-      <aside class="entry-sidebar">
-        {% include author %}
-        {% if author_picture %}
-          <img class="author-picture" src="{{ author_picture }}" alt="{{ author_name }}">
-        {% endif %}
-      </aside>
     </div>
 
     {% include footer.html %}
