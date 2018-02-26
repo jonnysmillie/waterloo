@@ -1,5 +1,6 @@
 ---
 title: "Layout: Excerpt (Defined)"
+subtitle: "Subtitle Goes Here"
 excerpt: "This is a user-defined post excerpt. It should be displayed in place of the auto-generated excerpt  or post content on index pages."
 categories:
   - Layout
@@ -9,6 +10,7 @@ tags:
   - excerpt
   - layout
 last_modified_at: 2017-03-09T12:43:31-05:00
+image: /images/big-ben.jpg
 ---
 
 This is the start of the post content.
