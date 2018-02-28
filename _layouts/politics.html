@@ -4,30 +4,38 @@ layout: default
 
 {% include page-intro.html %}
 
+
+
+
 <main id="main" class="page-content" aria-label="Content">
   <div class="inner">
-    <div class="entry-wrap">
-      <div class="entry-content">
-        {{ content }}
+    
+      <div id="content" class="content content--center">
+        <div class="grid grid--type-a">
+          <div class="grid__sizer"></div>
+          {% for post in site.posts %}
+          <div class="grid__item">
+            
+            <a class="grid__link" href="{{post.url}}">
+            {% if post.image %}
+            <img class="grid__img" src="{{site.url}}{{post.image}}" alt="Some image" />
+            {% endif %}
+            <h4>{{post.title}}</h4>
+            <p>{{post.subtitle}}</p>
+            <p>
+              <span class="icon">{% include icon-calendar.svg %}</span>
+              <time class="entry-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+              </p>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+
+
+        
       </div>
-      <div class="entries">
-        {% if site.plugins contains 'jekyll-paginate' and page.paginate or site.gems contains 'jekyll-paginate' and page.paginate %}
-          {% comment %}
-            Add paginator.posts loop if jekyll-paginate plugin is enabled
-            and page.paginate == true
-          {% endcomment %}
-          {% include posts-paginated.html %}
-        {% else %}
-          {% include posts-politics.html %}
-        {% endif %}
-      </div>
-      <aside class="entry-sidebar">
-        {% include author %}
-        {% if author_picture %}
-          <img class="author-picture" src="{{ author_picture }}" alt="{{ author_name }}">
-        {% endif %}
-      </aside>
-    </div>
+      
+    
 
     {% include footer.html %}
   </div>
